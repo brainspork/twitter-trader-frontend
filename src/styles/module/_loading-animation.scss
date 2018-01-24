@@ -1,0 +1,43 @@
+.loading-container {
+  width: 50%;
+  margin: 25% auto;
+}
+
+.circle {
+    position: relative;
+    background: rgb(255, 217, 0);
+    width: 50vw;
+    height: 50vw;
+    border-radius: 100%;
+    margin: 25px;
+    animation: roll 1.5s infinite linear;
+  }
+  
+  .circle-inner {
+    position: absolute;
+    display: inline-block;
+    left: 1vw;
+    top: 1vw;
+    background: #fff;
+    width: 48vw;
+    height: 48vw;
+    border-radius: 100%;
+  }
+  
+  .circle-rotate {
+    display: inline-block;
+    position: absolute;
+    width: 10vw;
+    height: 10vw;
+    border-radius: 100%;
+    background: rgb(0, 132, 180);
+    top: 50%;
+    left: -2.5vw;
+  }
+  
+  @keyframes roll {
+    
+    100% {
+      transform: rotate(360deg);
+    }
+  }

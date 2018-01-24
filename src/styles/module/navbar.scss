@@ -1,0 +1,52 @@
+header {
+    img {
+        width: 50%;
+        margin: 2%;
+    }
+
+    .fa-bars {
+        font-size: 10vw;
+        margin-top: 5%;
+        margin-right: 2%;
+        float: right;    
+    }
+
+    .header-nav {
+        z-index: 99999999;
+        width: 100%;
+        position: fixed;
+        height: 200vw;
+        visibility: hidden;
+        background: rgba(0, 0, 0, 0);
+        transition: 350ms all;
+
+        .main-menu {
+            width: 50%;
+            position: absolute;
+            height: 200vw;
+            right: 0;
+            background: #fff;
+            transition: 350ms all;
+
+            li {
+                padding: 4% 0;
+                text-align: center;
+                font-size: 10vw;
+                border-bottom: 2px solid #777;
+            }
+        }
+    }
+    
+    .fade-in {
+        visibility: visible;
+        background: rgba(0, 0, 0, 0.25);
+    }
+}
+
+.menu-closed {
+    transform: translateX(100%);
+}
+
+.menu-open {
+    transform: translateX(0);
+}

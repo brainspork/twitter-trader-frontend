@@ -1,0 +1,175 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+a, a:visited, a:active {
+  text-decoration: none;
+  color: #777;
+  font-family: "Roboto", helvetica, sans-serif; }
+
+body {
+  overflow-x: hidden;
+  max-width: 100%; }
+
+h2 {
+  font-size: 10vw;
+  text-align: center;
+  margin-bottom: 2%;
+  font-family: "Roboto", helvetica, sans-serif; }
+
+.clear-fix {
+  clear: both; }
+
+header img {
+  width: 50%;
+  margin: 2%; }
+header .fa-bars {
+  font-size: 10vw;
+  margin-top: 5%;
+  margin-right: 2%;
+  float: right; }
+header .header-nav {
+  z-index: 99999999;
+  width: 100%;
+  position: fixed;
+  height: 200vw;
+  visibility: hidden;
+  background: rgba(0, 0, 0, 0);
+  transition: 350ms all; }
+  header .header-nav .main-menu {
+    width: 50%;
+    position: absolute;
+    height: 200vw;
+    right: 0;
+    background: #fff;
+    transition: 350ms all; }
+    header .header-nav .main-menu li {
+      padding: 4% 0;
+      text-align: center;
+      font-size: 10vw;
+      border-bottom: 2px solid #777; }
+header .fade-in {
+  visibility: visible;
+  background: rgba(0, 0, 0, 0.25); }
+
+.menu-closed {
+  transform: translateX(100%); }
+
+.menu-open {
+  transform: translateX(0); }
+
+.stock-card {
+  width: 100%; }
+  .stock-card .stock-list-item {
+    width: 96%;
+    border-bottom: 1px solid #777;
+    padding: 2%;
+    font-family: "Roboto", helvetica, sans-serif; }
+    .stock-card .stock-list-item h3 {
+      float: left;
+      font-size: 7.5vw;
+      width: 32.5%; }
+    .stock-card .stock-list-item .stock-list-date {
+      float: left;
+      margin: 2% 0;
+      font-size: 5vw; }
+    .stock-card .stock-list-item .stock-list-count {
+      float: right;
+      font-size: 7.5vw; }
+  .stock-card .stock-list-item:first-of-type {
+    border-top: 1px solid #777; }
+
+.not-found {
+  display: block;
+  width: 75%;
+  margin: 25% auto 0 auto; }
+
+.return-home {
+  display: block;
+  width: 35%;
+  text-align: center;
+  margin: 2% auto;
+  font-size: 5vw; }
+
+.loading-container {
+  width: 50%;
+  margin: 25% auto; }
+
+.circle {
+  position: relative;
+  background: #ffd900;
+  width: 50vw;
+  height: 50vw;
+  border-radius: 100%;
+  margin: 25px;
+  animation: roll 1.5s infinite linear; }
+
+.circle-inner {
+  position: absolute;
+  display: inline-block;
+  left: 1vw;
+  top: 1vw;
+  background: #fff;
+  width: 48vw;
+  height: 48vw;
+  border-radius: 100%; }
+
+.circle-rotate {
+  display: inline-block;
+  position: absolute;
+  width: 10vw;
+  height: 10vw;
+  border-radius: 100%;
+  background: #0084b4;
+  top: 50%;
+  left: -2.5vw; }
+
+@keyframes roll {
+  100% {
+    transform: rotate(360deg); } }
+
+/*# sourceMappingURL=style.css.map */

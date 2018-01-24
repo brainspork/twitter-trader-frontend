@@ -1,0 +1,12 @@
+<header>
+  <img src="../../assets/images/twitter_trader_icon.svg" alt="Tiwtter Trader">
+  <i (click)="toggleMenu()" class="fa fa-bars"></i>
+  <div class="clear-fix"></div>
+  <nav class="header-nav" [class.fade-in]="menuOpen">
+    <ul class="main-menu menu-closed" [class.menu-open]="menuOpen">
+      <li><a href="/">Home</a></li>
+      <li><a href="/stocks">Stocks</a></li>
+      <li><a href="#">About</a></li>
+    </ul>
+  </nav>
+</header>

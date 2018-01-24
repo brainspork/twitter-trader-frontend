@@ -1,0 +1,30 @@
+.stock-card {
+    width: 100%; 
+
+    .stock-list-item {
+        width: 96%;
+        border-bottom: 1px solid #777;
+        padding: 2%;
+        font-family: $font-stack;
+        h3 {
+            float: left;
+            font-size: 7.5vw;
+            width: 32.5%;
+        }
+
+        .stock-list-date {
+            float: left;
+            margin: 2% 0;
+            font-size: 5vw;
+        }
+
+        .stock-list-count {
+            float: right;
+            font-size: 7.5vw;
+        }
+    }
+
+    .stock-list-item:first-of-type {
+        border-top: 1px solid #777;
+    }
+}
