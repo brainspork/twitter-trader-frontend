@@ -48,17 +48,33 @@ table {
 
 a, a:visited, a:active {
   text-decoration: none;
-  color: #777;
+  color: #000;
   font-family: "Roboto", helvetica, sans-serif; }
 
 body {
   overflow-x: hidden;
   max-width: 100%; }
 
+h1 {
+  font-family: "Roboto", helvetica, sans-serif;
+  font-size: 12.5vw; }
+
 h2 {
   font-size: 10vw;
   text-align: center;
   margin-bottom: 2%;
+  font-family: "Roboto", helvetica, sans-serif; }
+
+h3 {
+  font-family: "Roboto", helvetica, sans-serif; }
+
+button {
+  border: none;
+  background: none;
+  padding: 0;
+  margin: 0; }
+
+p {
   font-family: "Roboto", helvetica, sans-serif; }
 
 .clear-fix {
@@ -92,6 +108,8 @@ header .header-nav {
       text-align: center;
       font-size: 10vw;
       border-bottom: 2px solid #777; }
+      header .header-nav .main-menu li a {
+        color: #777; }
 header .fade-in {
   visibility: visible;
   background: rgba(0, 0, 0, 0.25); }
@@ -101,6 +119,58 @@ header .fade-in {
 
 .menu-open {
   transform: translateX(0); }
+
+.hero-container {
+  position: relative;
+  overflow: hidden; }
+  .hero-container img {
+    width: 100%; }
+  .hero-container .hero-content {
+    position: absolute;
+    width: 100%;
+    z-index: 999999;
+    top: 0;
+    left: 0;
+    padding: 2% 0;
+    background-color: rgba(0, 0, 0, 0.5); }
+    .hero-container .hero-content h1 {
+      color: #FFFFEB;
+      text-align: center;
+      width: 100%; }
+    .hero-container .hero-content .button-center .btn {
+      margin: 4% auto; }
+      .hero-container .hero-content .button-center .btn a {
+        font-size: 5vw;
+        color: #FFFFEB; }
+
+.home-trending .trending-stock-item {
+  text-align: center;
+  display: block; }
+.home-trending p {
+  font-size: 5vw;
+  font-family: "Roboto", helvetica, sans-serif;
+  text-align: center; }
+
+.how-it-works h2 {
+  padding-top: 4%;
+  font-size: 7.5vw; }
+.how-it-works .info-container {
+  padding: 2% 0;
+  border-bottom: 1px solid #777; }
+  .how-it-works .info-container h3 {
+    text-align: center;
+    font-size: 5vw; }
+  .how-it-works .info-container p {
+    text-align: center;
+    font-size: 4vw;
+    padding: 2%; }
+  .how-it-works .info-container img {
+    width: 100%;
+    margin-top: 2%; }
+.how-it-works .info-container:first-of-type {
+  border-top: 1px solid #777; }
+.how-it-works .info-container:last-of-type {
+  border-bottom: none; }
 
 .stock-card {
   width: 100%; }
@@ -123,6 +193,15 @@ header .fade-in {
   .stock-card .stock-list-item:first-of-type {
     border-top: 1px solid #777; }
 
+.trending {
+  background: green; }
+
+.chart-container {
+  overflow-x: scroll;
+  width: 98%; }
+  .chart-container .chart {
+    width: 450px; }
+
 .not-found {
   display: block;
   width: 75%;
@@ -134,6 +213,14 @@ header .fade-in {
   text-align: center;
   margin: 2% auto;
   font-size: 5vw; }
+
+.btn {
+  padding: 2% 4%;
+  background: #0084b4;
+  border-radius: 3px; }
+
+.button-center {
+  text-align: center; }
 
 .loading-container {
   width: 50%;

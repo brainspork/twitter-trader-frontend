@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TwitterTraderService } from '../../services/twitter-trader.service';
 import { Hour } from '../../models/Hour';
+import { Average } from '../../models/Average';
 
 @Component({
   selector: 'app-data-list',
@@ -10,15 +11,15 @@ import { Hour } from '../../models/Hour';
 export class DataListComponent implements OnInit {
 
   stocks: Hour[];
-  loaded: boolean = false;
+  stocksLoaded: boolean = false;
 
   constructor(private twitterTraderService: TwitterTraderService) { }
 
   ngOnInit() {
     this.twitterTraderService.getStocks().subscribe(stocks => {
       this.stocks = stocks;
-      this.loaded = true;
+      console.log(stocks[0]);
+      this.stocksLoaded = true;
     });
   }
-
 }

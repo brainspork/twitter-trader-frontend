@@ -1,0 +1,21 @@
+<section *ngIf="loaded">
+  <h2>{{ stocks[0].name }}</h2>
+  <div class="chart-container">
+    <div [class.chart]="mobWidth < 400">
+      <canvas *ngIf="chartLoaded" 
+        baseChart [chartType]="'line'" 
+        [datasets]="chartData" 
+        [labels]="chartLabels" 
+        [options]="chartOptions"
+        [legend]="false">
+      </canvas>
+    </div>
+  </div>
+</section>
+
+<div class="loading-container" *ngIf="!loaded && !chartLoaded">
+  <div class="circle">
+    <div class="circle-inner"></div>
+    <div class="circle-rotate"></div>
+  </div>
+</div>

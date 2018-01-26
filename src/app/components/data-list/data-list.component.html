@@ -1,20 +1,22 @@
 <h2>Stocks</h2>
-<ul class="stock-card" *ngIf="loaded && stocks?.length > 0">
-  <li class="stock-list-item" *ngFor="let stock of stocks">
-    <h3>{{ stock.name }}</h3>
-    <p class="stock-list-date">{{ stock.date | date: 'short'}}</p>
-    <p class="stock-list-count">{{ stock.count }}</p>
-    <div class="clear-fix"></div>
+<ul class="stock-card" *ngIf="stocksLoaded && stocks?.length > 0">
+  <li class="stock-list-item" *ngFor="let stock of stocks" [class.trending]="stock.trending">
+    <a routerLink="/hourly/{{ stock.name }}" [class.trending]="stock.trending">
+      <h3>{{ stock.name }}</h3>
+      <p class="stock-list-date">{{ stock.date | date: 'short'}}</p>
+      <p class="stock-list-count">{{ stock.count }}</p>
+      <div class="clear-fix"></div>
+    </a>
   </li>
 </ul>
 
-<div class="loading-container" *ngIf="!loaded">
+<div class="loading-container" *ngIf="!stocksLoaded">
   <div class="circle">
     <div class="circle-inner"></div>
     <div class="circle-rotate"></div>
   </div>
 </div>
 
-<div *ngIf="loaded && stocks!.length === 0">
+<div *ngIf="stocksLoaded && stocks!.length === 0">
   <p>There is no data to display from the past hour. Check back later</p>
 </div>

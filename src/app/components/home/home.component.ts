@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { TwitterTraderService } from '../../services/twitter-trader.service';
+
+import { Hour } from '../../models/Hour';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +10,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  trendingStocks: Hour[];
+  stocksLoaded: boolean = false;
+
+  constructor(private twitterTraderService: TwitterTraderService) { }
 
   ngOnInit() {
+    this.twitterTraderService.getStocks().subscribe(stocks => {
+      this.trendingStocks = stocks.filter(curr => {return curr.trending === true});
+      this.stocksLoaded = true;
+    });
   }
 
 }

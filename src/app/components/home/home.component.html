@@ -1,3 +1,56 @@
-<p>
-  home works!
-</p>
+<section class="hero-container">
+  <div class="hero-image-container">
+    <img class="hero-image" src="../../assets/images/tt-hero-small.JPG" alt="Welcome to Twitter Trader">
+  </div>
+
+  <div class="hero-content">
+    <h1>Welcome to Twitter Trader</h1>
+    <div class="button-center">
+      <button class="btn">
+        <a routerLink="/stocks">View Stocks</a>
+      </button>
+    </div>
+  </div>
+</section>
+
+<section class="home-trending">
+  <h2>Trending now</h2>
+  <ul class="stock-card" *ngIf="stocksLoaded && trendingStocks.length > 0">
+    <li class="stock-list-item" ngFor="let stock of trendingStocks">
+      <a routerLink="/hourly/{{ stock.name }}">
+        <h3 class="trending-stock-item">{{ stock.name }}</h3>
+      </a>
+    </li>
+  </ul>
+
+  <p *ngIf="stocksLoaded && trendingStocks.length === 0">There are no stocks currently trending</p>
+
+  <div class="loading-container" *ngIf="!stocksLoaded">
+    <div class="circle">
+      <div class="circle-inner"></div>
+      <div class="circle-rotate"></div>
+    </div>
+  </div>
+</section>
+
+<section class="how-it-works">
+  <h2>How it works</h2>
+  <div class="info-container">
+    <h3>Get twitter data</h3>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorum ipsam perferendis dignissimos, mollitia sit labore
+      est omnis animi placeat fuga. Reiciendis quibusdam necessitatibus modi officia magni nulla ab magnam saepe!</p>
+    <img src="http://placehold.it/300X150" alt="">
+  </div>
+  <div class="info-container">
+    <h3>View hourly or daily trends</h3>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorum ipsam perferendis dignissimos, mollitia sit labore
+      est omnis animi placeat fuga. Reiciendis quibusdam necessitatibus modi officia magni nulla ab magnam saepe!</p>
+    <img src="http://placehold.it/300X150" alt="">
+  </div>
+  <div class="info-container">
+    <h3>Lorem ipsum dolor sit amet</h3>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorum ipsam perferendis dignissimos, mollitia sit labore
+      est omnis animi placeat fuga. Reiciendis quibusdam necessitatibus modi officia magni nulla ab magnam saepe!</p>
+    <img src="http://placehold.it/300X150" alt="">
+  </div>
+</section>

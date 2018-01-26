@@ -1,0 +1,85 @@
+.hero-container {
+    position: relative;
+    overflow: hidden;
+    img {
+        width: 100%;
+    }
+
+    .hero-content {
+        position: absolute;
+        width: 100%;
+        z-index: 999999;
+        top: 0;
+        left: 0;
+        padding: 2% 0;
+        background-color: rgba(0, 0, 0, 0.5);
+
+        h1 {
+            color: #FFFFEB;
+            text-align: center;
+            width: 100%;
+        }
+
+        .button-center {
+            .btn {
+                margin: 4% auto;
+        
+                a {
+                    font-size: 5vw;
+                    color: #FFFFEB;
+                }
+            }
+        }
+    }
+}
+
+.home-trending {
+
+    .trending-stock-item {
+        text-align: center;
+        display: block;
+    }
+
+    p {
+        font-size: 5vw;
+        font-family: $font-stack;
+        text-align: center;
+    }
+}
+
+.how-it-works {
+    h2 {
+        padding-top: 4%;
+        font-size: 7.5vw;
+    }
+
+    .info-container {
+        padding: 2% 0;
+        border-bottom: 1px solid #777;
+
+        h3 {
+            text-align: center;
+            font-size: 5vw;
+        }
+    
+        p {
+            text-align: center;
+            font-size: 4vw;
+            padding: 2%;
+        }
+    
+        img {
+            width: 100%;
+            margin-top: 2%;
+        }
+    
+    }
+
+    .info-container:first-of-type {
+        border-top: 1px solid #777;
+    }
+
+    .info-container:last-of-type {
+        border-bottom: none;
+    }
+}
