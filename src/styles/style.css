@@ -143,6 +143,9 @@ header .fade-in {
         font-size: 5vw;
         color: #FFFFEB; }
 
+.home-trending h2 {
+  padding-top: 4%;
+  font-size: 7.5vw; }
 .home-trending .trending-stock-item {
   text-align: center;
   display: block; }
@@ -196,6 +199,10 @@ header .fade-in {
 .trending {
   background: green; }
 
+.no-stocks {
+  width: 96%;
+  text-align: center; }
+
 .chart-container {
   overflow-x: scroll;
   width: 98%; }
@@ -217,6 +224,7 @@ header .fade-in {
 .btn {
   padding: 2% 4%;
   background: #0084b4;
+  color: #FFFFEB;
   border-radius: 3px; }
 
 .button-center {

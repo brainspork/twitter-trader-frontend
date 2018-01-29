@@ -18,7 +18,6 @@ export class DataListComponent implements OnInit {
   ngOnInit() {
     this.twitterTraderService.getStocks().subscribe(stocks => {
       this.stocks = stocks;
-      console.log(stocks[0]);
       this.stocksLoaded = true;
     });
   }

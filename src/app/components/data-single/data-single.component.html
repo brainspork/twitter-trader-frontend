@@ -2,14 +2,20 @@
   <h2>{{ stocks[0].name }}</h2>
   <div class="chart-container">
     <div [class.chart]="mobWidth < 400">
-      <canvas *ngIf="chartLoaded" 
+      <canvas baseChart
+       *ngIf="chartLoaded" 
         baseChart [chartType]="'line'" 
         [datasets]="chartData" 
         [labels]="chartLabels" 
+        [colors]="chartColors"
         [options]="chartOptions"
         [legend]="false">
       </canvas>
     </div>
+  </div>
+  <div class="button-center">
+    <button (click)="switchHourChart(stocks)" class="btn">Hourly</button>
+    <button (click)="switchDayChart(dayCount)" class="btn">Daily</button>
   </div>
 </section>
 

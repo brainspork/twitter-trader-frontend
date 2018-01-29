@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { TwitterTraderService } from '../../services/twitter-trader.service';
 import { Hour } from '../../models/Hour';
+import { Day } from '../../models/Day';
+import { BaseChartDirective } from 'ng2-charts';
 
 @Component({
   selector: 'app-data-single',
@@ -10,19 +12,39 @@ import { Hour } from '../../models/Hour';
 })
 export class DataSingleComponent implements OnInit {
 
+  @ViewChild(BaseChartDirective) chart: BaseChartDirective;
+
   stocks: Hour[];
+  dayCount: Day[];
   loaded: boolean = false;
   chartLabels: number[];
   chartData: any[];
   chartOptions: any = {
     responsive: true,
     scales: {
+      yAxes: [{
+        ticks: {
+          beginAtZero: true,
+          userCallback: function (label, index, labels) {
+            // when the floored value is the same as the value we have a whole number
+            if (Math.floor(label) === label) {
+              return label;
+            }
+
+          },
+        }
+      }],
       xAxes: [{
-        fontSize: 20
+        ticks: {
+          autoSkip: true,
+          stepSize: 1,
+          min: 12
+        }
       }]
-     }
+    }
   };
   chartLoaded: boolean = false;
+  dayChart: boolean = false;
   mobWidth: any;
 
 
@@ -33,21 +55,52 @@ export class DataSingleComponent implements OnInit {
     const name = this.route.snapshot.paramMap.get('stock');
     this.twitterTraderService.getStockHourly(name).subscribe(stocks => {
       this.stocks = stocks;
-      console.log(this.stocks);
-      this.initChart(stocks, () => this.chartLoaded = true);
+      this.initChart(stocks);
       this.loaded = true;
+    });
+
+    this.twitterTraderService.getStocksDaily(name).subscribe(stocks => {
+      this.dayCount = stocks;
     });
   }
 
-  initChart(stocks: Hour[], callback) {
-    this.chartLabels = stocks.map(curr => {return new Date(curr.date).getHours()});
+  initChart(stocks) {
+    this.chartLabels = stocks.map(curr => {
+      if (!this.dayChart) {
+        return new Date(curr.date).getHours();
+      } else {
+        return curr.date
+      }
+    });
+
     this.chartData = [{
-      borderColor: '#0084b4',
-      data: stocks.map(curr => {return curr.count}), 
-      label: stocks[0].name, 
-      fill: false, 
+      data: stocks.map(curr => { return curr.count }),
+      label: stocks[0].name,
       lineTension: 0
     }];
-    callback();
+
+    this.refresh_chart();
+
+    this.chartLoaded = true;
+  }
+
+  switchHourChart(data: Hour[]) {
+    this.dayChart = false;
+    this.initChart(data);
+  }
+
+  switchDayChart(data: Day[]) {
+    this.dayChart = true;
+    this.initChart(data);
+  }
+
+  refresh_chart() {
+    setTimeout(() => {
+      if (this.chart && this.chart.chart && this.chart.chart.config) {
+        this.chart.chart.config.data.labels = this.chartLabels;
+        this.chart.chart.config.data.datasets = this.chartData;
+        this.chart.chart.update();
+      }
+    });
   }
 }
