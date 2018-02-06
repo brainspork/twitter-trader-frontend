@@ -16,9 +16,12 @@
 <section class="home-trending">
   <h2>Trending now</h2>
   <ul class="stock-card" *ngIf="stocksLoaded && trendingStocks.length > 0">
-    <li class="stock-list-item" ngFor="let stock of trendingStocks">
-      <a routerLink="/hourly/{{ stock.name }}">
-        <h3 class="trending-stock-item">{{ stock.name }}</h3>
+    <li class="stock-list-item" *ngFor="let stock of trendingStocks" [class.trending]="stock.trending">
+      <a routerLink="/hourly/{{ stock.name }}" [class.trending]="stock.trending">
+        <h3>{{ stock.name }}</h3>
+        <p class="stock-list-date">{{ stock.date | date: 'short'}}</p>
+        <p class="stock-list-count">{{ stock.count }}</p>
+        <div class="clear-fix"></div>
       </a>
     </li>
   </ul>

@@ -147,8 +147,7 @@ header .fade-in {
   padding-top: 4%;
   font-size: 7.5vw; }
 .home-trending .trending-stock-item {
-  text-align: center;
-  display: block; }
+  margin: 0 auto; }
 .home-trending p {
   font-size: 5vw;
   font-family: "Roboto", helvetica, sans-serif;
