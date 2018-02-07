@@ -35,3 +35,9 @@ button {
 p {
     font-family: $font-stack;
 }
+
+@media screen and (min-width: 940px) {
+    h2 {
+        font-size: 50px;
+    }
+}

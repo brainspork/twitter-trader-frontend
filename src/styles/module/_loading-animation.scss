@@ -41,3 +41,27 @@
       transform: rotate(360deg);
     }
   }
+
+  @media screen and (min-width: 640px) {
+    .loading-container {
+      width: auto;
+      display: inline-block;
+      .circle {
+        width: 100px;
+        height: 100px;
+      }
+      
+      .circle-inner {
+        left: 2px;
+        top: 2px;
+        width: 96px;
+        height: 96px;
+      }
+      
+      .circle-rotate {
+        width: 20px;
+        height: 20px;
+        left: -6px;
+      }
+    }
+  }

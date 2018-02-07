@@ -77,6 +77,9 @@ button {
 p {
   font-family: "Roboto", helvetica, sans-serif; }
 
+@media screen and (min-width: 940px) {
+  h2 {
+    font-size: 50px; } }
 .clear-fix {
   clear: both; }
 
@@ -120,6 +123,42 @@ header .fade-in {
 .menu-open {
   transform: translateX(0); }
 
+@media screen and (min-width: 640px) {
+  header a img {
+    width: 25%; }
+  header .fa-bars {
+    display: none; }
+  header .header-nav {
+    position: static;
+    visibility: visible;
+    height: auto;
+    width: auto; }
+    header .header-nav .main-menu {
+      transform: translateX(0);
+      height: auto;
+      width: 100%;
+      position: static; }
+      header .header-nav .main-menu li {
+        width: auto;
+        display: inline-block;
+        text-align: left;
+        font-size: 3vw;
+        border-bottom: none;
+        padding: 1% 2%; }
+        header .header-nav .main-menu li a {
+          display: inline-block;
+          width: auto; } }
+@media screen and (min-width: 940px) {
+  header {
+    width: 940px;
+    margin: 0 auto; }
+    header a img {
+      margin-left: 0; }
+    header .header-nav .main-menu li {
+      font-size: 25px; }
+    header .header-nav .main-menu li:first-of-type {
+      margin-left: 0;
+      padding-left: 0; } }
 .hero-container {
   position: relative;
   overflow: hidden; }
@@ -146,8 +185,6 @@ header .fade-in {
 .home-trending h2 {
   padding-top: 4%;
   font-size: 7.5vw; }
-.home-trending .trending-stock-item {
-  margin: 0 auto; }
 .home-trending p {
   font-size: 5vw;
   font-family: "Roboto", helvetica, sans-serif;
@@ -174,6 +211,42 @@ header .fade-in {
 .how-it-works .info-container:last-of-type {
   border-bottom: none; }
 
+@media screen and (min-width: 940px) {
+  .hero-container {
+    width: 940px;
+    height: 300px;
+    margin: 0 auto; }
+    .hero-container .hero-content {
+      height: 402px; }
+      .hero-container .hero-content h1 {
+        font-size: 75px; }
+      .hero-container .hero-content .button-center {
+        margin-top: 40px; }
+        .hero-container .hero-content .button-center .btn a {
+          font-size: 25px; }
+
+  .home-trending {
+    width: 940px;
+    margin: 0 auto; }
+    .home-trending h2 {
+      font-size: 50px; }
+
+  .how-it-works {
+    width: 940px;
+    margin: 0 auto; }
+    .how-it-works h2 {
+      font-size: 50px; }
+    .how-it-works .info-container h3 {
+      font-size: 30px;
+      margin-bottom: 1%; }
+    .how-it-works .info-container p {
+      width: 50%;
+      font-size: 25px;
+      display: inline-block; }
+    .how-it-works .info-container img {
+      width: 40%;
+      float: right;
+      margin: 1% 0; } }
 .stock-card {
   width: 100%; }
   .stock-card .stock-list-item {
@@ -202,12 +275,38 @@ header .fade-in {
   width: 96%;
   text-align: center; }
 
+@media screen and (min-width: 940px) {
+  .stock-card {
+    width: 938px;
+    margin: 0 auto; }
+    .stock-card .stock-list-item {
+      border-right: 1px solid #777;
+      border-left: 1px solid #777; }
+      .stock-card .stock-list-item h3 {
+        font-size: 50px; }
+      .stock-card .stock-list-item .stock-list-date {
+        font-size: 40px;
+        margin: 1% 0; }
+      .stock-card .stock-list-item .stock-list-count {
+        font-size: 50px; } }
 .chart-container {
   overflow-x: scroll;
   width: 98%; }
   .chart-container .chart {
     width: 450px; }
 
+@media screen and (min-width: 940px) {
+  .chart-container {
+    width: 940px;
+    margin: 0 auto; }
+
+  .button-center {
+    margin: 2% 0; }
+    .button-center .btn {
+      font-size: 25px;
+      padding: 7px 20px; }
+    .button-center button:last-of-type {
+      margin-right: 20px; } }
 .not-found {
   display: block;
   width: 75%;
@@ -265,5 +364,21 @@ header .fade-in {
 @keyframes roll {
   100% {
     transform: rotate(360deg); } }
+@media screen and (min-width: 640px) {
+  .loading-container {
+    width: auto;
+    display: inline-block; }
+    .loading-container .circle {
+      width: 100px;
+      height: 100px; }
+    .loading-container .circle-inner {
+      left: 2px;
+      top: 2px;
+      width: 96px;
+      height: 96px; }
+    .loading-container .circle-rotate {
+      width: 20px;
+      height: 20px;
+      left: -6px; } }
 
 /*# sourceMappingURL=style.css.map */

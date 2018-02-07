@@ -38,3 +38,26 @@
     width: 96%;
     text-align: center;
 }
+
+@media screen and (min-width: 940px) {
+    .stock-card {
+        width: 938px;
+        margin: 0 auto;
+        .stock-list-item {
+            border-right: 1px solid #777;
+            border-left: 1px solid #777;
+            h3 {
+                font-size: 50px;
+            }
+
+            .stock-list-date {
+                font-size: 40px;
+                margin: 1% 0;
+            }
+
+            .stock-list-count {
+                font-size: 50px;
+            }
+        }
+    }
+}

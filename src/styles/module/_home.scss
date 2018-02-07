@@ -40,10 +40,6 @@
         font-size: 7.5vw;
     }
 
-    .trending-stock-item {
-        
-    }
-
     p {
         font-size: 5vw;
         font-family: $font-stack;
@@ -85,5 +81,68 @@
 
     .info-container:last-of-type {
         border-bottom: none;
+    }
+}
+
+@media screen and (min-width: 640px) {
+
+}
+
+@media screen and (min-width: 940px) {
+    .hero-container {
+        width: 940px;
+        height: 300px;
+        margin: 0 auto;
+        .hero-content {
+            height: 402px;
+            h1 {
+                font-size: 75px;
+            }
+
+            .button-center {
+                margin-top: 40px;
+                .btn {
+                    a {
+                        font-size: 25px;
+                    }
+                }
+            }
+        }
+    }
+
+    .home-trending {
+        width: 940px;
+        margin: 0 auto;
+
+        h2 {
+            font-size: 50px;
+        }
+    }
+
+    .how-it-works {
+        width: 940px;
+        margin: 0 auto;
+        h2 {
+            font-size: 50px;
+        }
+
+        .info-container {
+            h3 {
+                font-size: 30px;
+                margin-bottom: 1%;
+            }
+
+            p {
+                width: 50%;
+                font-size: 25px;
+                display: inline-block;
+            }
+
+            img {
+                width: 40%;
+                float: right;
+                margin: 1% 0;
+            }
+        }
     }
 }
