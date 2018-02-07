@@ -33,13 +33,6 @@ export class DataSingleComponent implements OnInit {
 
           },
         }
-      }],
-      xAxes: [{
-        ticks: {
-          autoSkip: true,
-          stepSize: 1,
-          min: 12
-        }
       }]
     }
   };
@@ -69,7 +62,7 @@ export class DataSingleComponent implements OnInit {
       if (!this.dayChart) {
         return new Date(curr.date).getHours();
       } else {
-        return curr.date
+        return curr.date;
       }
     });
 
@@ -102,5 +95,17 @@ export class DataSingleComponent implements OnInit {
         this.chart.chart.update();
       }
     });
+  }
+
+  formatDate(date) {
+    var d = new Date(date),
+      month = '' + (d.getMonth() + 1),
+      day = '' + d.getDate(),
+      year = d.getFullYear();
+
+    if (month.length < 2) month = '0' + month;
+    if (day.length < 2) day = '0' + day;
+
+    return [year, month, day].join('-');
   }
 }
