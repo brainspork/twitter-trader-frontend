@@ -1,5 +1,5 @@
-<section *ngIf="loaded">
-  <h2>{{ stocks[0].name }}</h2>
+<section *ngIf="loaded" class="data-single">
+  <h2>${{ stocks[0].name }}</h2>
   <div class="chart-container">
     <div [class.chart]="mobWidth < 400">
       <canvas baseChart *ngIf="chartLoaded" baseChart [chartType]="'line'" [datasets]="chartData" [labels]="chartLabels" [colors]="chartColors"
@@ -7,11 +7,13 @@
       </canvas>
     </div>
   </div>
+  <p *ngIf="!dayChart">Hours</p>
+  <p *ngIf="dayChart">Days</p>
   <div class="button-center">
     <button (click)="switchHourChart(stocks)" class="btn">Hourly</button>
     <button (click)="switchDayChart(dayCount)" class="btn">Daily</button>
   </div>
-  <div class="button-center">
+  <div class="button-center outside-links">
     <button class="btn">
       <a href="https://twitter.com/search?q=%24{{ stocks[0].name }}&src=typd&lang=en">View Tweets</a>
     </button>
@@ -23,7 +25,6 @@
 
 
 <div class="button-center">
-
   <div class="loading-container" *ngIf="!loaded && !chartLoaded">
     <div class="circle">
       <div class="circle-inner"></div>

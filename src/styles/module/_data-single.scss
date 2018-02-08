@@ -1,26 +1,59 @@
-.chart-container {
-    overflow-x: scroll;
-    width: 98%;
-    .chart {
-        width: 450px;
+
+.data-single {
+    .chart-container {
+        overflow-x: scroll;
+        width: 98%;
+        .chart {
+            width: 450px;
+        }
+    }
+
+    h2 {
+        color: #777;
+    }
+
+    p {
+        text-align: center;
+        font-size: 3vw;
+        color: #777;
+        margin: 2% 0 4% 0;
+    }
+    
+    .outside-links {
+        margin-top: 2%;
+        a {
+            color: #FFFFEB;
+        }
+    }
+
+    .btn {
+        font-size: 3vw;
+        width: 25%;
     }
 }
 
 @media screen and (min-width: 940px) {
-    .chart-container {
-     width: 940px;
-     margin: 0 auto;
-    }
+    .data-single {
+        .chart-container {
+            width: 940px;
+            margin: 0 auto;
+           }
+           .button-center {
+               margin: 2% 0;
+               .btn {
+                   font-size: 25px;
+                   padding: 7px 20px;
+                   width: 20%;
+                   max-width: 230px;
+               }
+       
+               button:last-of-type {
+                   margin-right: 20px;
+               }
+           }
 
-    .button-center {
-        margin: 2% 0;
-        .btn {
-            font-size: 25px;
-            padding: 7px 20px;
-        }
-
-        button:last-of-type {
-            margin-right: 20px;
-        }
+           p {
+               font-size: 25px;
+           }
     }
 }

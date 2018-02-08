@@ -279,34 +279,48 @@ header .fade-in {
   .stock-card {
     width: 938px;
     margin: 0 auto; }
-    .stock-card .stock-list-item {
-      border-right: 1px solid #777;
-      border-left: 1px solid #777; }
-      .stock-card .stock-list-item h3 {
-        font-size: 50px; }
-      .stock-card .stock-list-item .stock-list-date {
-        font-size: 40px;
-        margin: 1% 0; }
-      .stock-card .stock-list-item .stock-list-count {
-        font-size: 50px; } }
-.chart-container {
+    .stock-card .stock-list-item h3 {
+      font-size: 50px; }
+    .stock-card .stock-list-item .stock-list-date {
+      font-size: 40px;
+      margin: 1% 0; }
+    .stock-card .stock-list-item .stock-list-count {
+      font-size: 50px; } }
+.data-single .chart-container {
   overflow-x: scroll;
   width: 98%; }
-  .chart-container .chart {
+  .data-single .chart-container .chart {
     width: 450px; }
+.data-single h2 {
+  color: #777; }
+.data-single p {
+  text-align: center;
+  font-size: 3vw;
+  color: #777;
+  margin: 2% 0 4% 0; }
+.data-single .outside-links {
+  margin-top: 2%; }
+  .data-single .outside-links a {
+    color: #FFFFEB; }
+.data-single .btn {
+  font-size: 3vw;
+  width: 25%; }
 
 @media screen and (min-width: 940px) {
-  .chart-container {
+  .data-single .chart-container {
     width: 940px;
     margin: 0 auto; }
-
-  .button-center {
+  .data-single .button-center {
     margin: 2% 0; }
-    .button-center .btn {
+    .data-single .button-center .btn {
       font-size: 25px;
-      padding: 7px 20px; }
-    .button-center button:last-of-type {
-      margin-right: 20px; } }
+      padding: 7px 20px;
+      width: 20%;
+      max-width: 230px; }
+    .data-single .button-center button:last-of-type {
+      margin-right: 20px; }
+  .data-single p {
+    font-size: 25px; } }
 .not-found {
   display: block;
   width: 75%;
