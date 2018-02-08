@@ -2,20 +2,22 @@
   <h2>{{ stocks[0].name }}</h2>
   <div class="chart-container">
     <div [class.chart]="mobWidth < 400">
-      <canvas baseChart
-       *ngIf="chartLoaded" 
-        baseChart [chartType]="'line'" 
-        [datasets]="chartData" 
-        [labels]="chartLabels" 
-        [colors]="chartColors"
-        [options]="chartOptions"
-        [legend]="false">
+      <canvas baseChart *ngIf="chartLoaded" baseChart [chartType]="'line'" [datasets]="chartData" [labels]="chartLabels" [colors]="chartColors"
+        [options]="chartOptions" [legend]="false">
       </canvas>
     </div>
   </div>
   <div class="button-center">
     <button (click)="switchHourChart(stocks)" class="btn">Hourly</button>
     <button (click)="switchDayChart(dayCount)" class="btn">Daily</button>
+  </div>
+  <div class="button-center">
+    <button class="btn">
+      <a href="https://twitter.com/search?q=%24{{ stocks[0].name }}&src=typd&lang=en">View Tweets</a>
+    </button>
+    <button class="btn">
+      <a href="https://finance.yahoo.com/quote/{{ stocks[0].name }}">View Stocks</a>
+    </button>
   </div>
 </section>
 
