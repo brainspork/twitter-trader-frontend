@@ -19,10 +19,12 @@ h2 {
     text-align: center;
     margin-bottom: 2%;
     font-family: $font-stack;
+    color: #777;
 }
 
 h3 {
     font-family: $font-stack;
+    color: #777;
 }
 
 button {
@@ -34,6 +36,7 @@ button {
 
 p {
     font-family: $font-stack;
+    color: #777;
 }
 
 @media screen and (min-width: 940px) {
